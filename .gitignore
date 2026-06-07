@@ -1,0 +1,80 @@
+# Virtual Environment
+.venv/
+venv/
+env/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+wheels/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+
+# Environment Variables
+.env
+.env.*
+!.env.example
+
+# RAG / LangChain
+# Vector store data (Chroma, FAISS, Pinecone local cache, etc.)
+chroma_db/
+faiss_index/
+vectorstore/
+*.index
+*.pkl
+*.faiss
+
+# Document ingestion artifacts
+data/processed/
+data/embeddings/
+
+# LangChain cache
+.langchain/
+langchain.db
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# IDE & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+
+# uv
+.uv/
+uv.lock
