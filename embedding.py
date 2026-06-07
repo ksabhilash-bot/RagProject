@@ -2,7 +2,7 @@ from config import settings
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_core.documents import Document
 from typing import List
-from langchain_community.vectorstores import Chroma
+from langchain_chroma import Chroma
 
 #to create google_genai object for embedding
 def get_embeddings():

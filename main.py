@@ -1,7 +1,5 @@
 from config import settings
-from langchain_mistralai import ChatMistralAI
 from document_loader import document_loader
-from langchain_core.prompts import ChatPromptTemplate
 from splitter import split_documents
 from embedding import create_vectorstore,vectorload
 from retriever import get_retriever, retrieve_docs
@@ -22,8 +20,8 @@ retriever = get_retriever(vectorstore)
 chain = build_chain(retriever)
 
 # ask questions
-response = ask(chain, "what are the services they provide?")
-print(response)
+response = ask(chain, "what are the departments?")
+print("ai: ",response)
 
 
 
