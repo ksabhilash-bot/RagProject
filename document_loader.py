@@ -1,7 +1,7 @@
 from pypdf import PdfReader
 from langchain_community.document_loaders import TextLoader
 
-file_path = "AKS.txt"
+
 
 def documentLoader(file_path:str)->str:
     if file_path.endswith(".pdf"):
