@@ -1,18 +1,18 @@
-from pypdf import PdfReader
-from langchain_community.document_loaders import TextLoader
+from langchain_community.document_loaders import (
+    PyPDFLoader,
+    TextLoader
+)
 
-
-
-def documentLoader(file_path:str)->str:
+def document_loader(file_path: str):
     if file_path.endswith(".pdf"):
-        reader = PdfReader(file_path)
-        text = ""
-        for page in reader.pages:
-            text += page.extract_text()
-        return text
+        loader = PyPDFLoader(file_path)
+        return loader.load()
+
     elif file_path.endswith(".txt"):
         loader = TextLoader(file_path)
-        documents = loader.load()
-        return documents[0].page_content
+        return loader.load()
+
     else:
-        raise ValueError("Unsupported file format. Only PDF and TXT are supported.")
+        raise ValueError(
+            "Unsupported file format. Only PDF and TXT are supported."
+        )
