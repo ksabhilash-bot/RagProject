@@ -20,12 +20,13 @@ def create_vectorstore(chunks:List[Document],persist_directory: str = "chroma_db
     return vectorstore
 
 # Load vectorstore from disk
-def vectorload(persist_directory: str = "chroma_db")->Chroma:
+def vectorload(persist_directory: str = "chroma_db") -> Chroma:
     embeddings = get_embeddings()
     vectorstore = Chroma(
-        collection_name="default",
-        embedding_function=embeddings,
-        persist_directory=persist_directory
+        persist_directory=persist_directory,
+        embedding_function=embeddings
     )
-    print("Vectorstore loaded from disk")
+    # verify collection has data
+    count = vectorstore._collection.count()
+    print(f"Vectorstore loaded from disk — {count} chunks found")
     return vectorstore
