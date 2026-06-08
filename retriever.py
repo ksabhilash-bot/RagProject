@@ -12,7 +12,7 @@ def get_retriever(vectorstore:Chroma,k:int =4):
     )
 
 
-# Function to retrieve relevant documents based on a query for manual testing
+# Function to retrieve relevant documents based on a query for manual testing used in debug.py
 def retrieve_docs(retriever, query: str) -> List[Document]:
     docs = retriever.invoke(query)
     print(f"Retrieved {len(docs)} chunks for query: '{query}'")
