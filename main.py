@@ -10,10 +10,11 @@ from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 from cachetools import TTLCache
 from dotenv import load_dotenv
-
+import httpx
 from embedding import vectorload
 from retriever import get_retriever
 from chain import build_chain, ask
+import asyncio
 
 load_dotenv()
 
@@ -26,7 +27,7 @@ RATE_LIMIT_WINDOW = 60           # window size in seconds
 
 ALLOWED_ORIGINS = [
     "http://localhost:3000",     # Next.js dev
-    "https://yourdomain.com",    # production — replace this
+    os.getenv("FRONTEND_URL"),    # production — replace this
 ]
 
 # ─── App state ────────────────────────────────────────────────────────────────
@@ -43,15 +44,32 @@ rag_chain = None
 
 # ─── Lifespan ─────────────────────────────────────────────────────────────────
 
+# ─── Keep-alive (defined BEFORE lifespan) ─────────────────────────────────────
+
+async def keep_alive():
+    await asyncio.sleep(60)  # wait 1 min after startup before first ping
+    while True:
+        try:
+            async with httpx.AsyncClient() as client:
+                await client.get(
+                    f"{os.getenv('RENDER_EXTERNAL_URL', 'http://localhost:8000')}/health",
+                    timeout=10,
+                )
+        except Exception:
+            pass
+        await asyncio.sleep(600)  
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     global rag_chain
     vectorstore = vectorload(CHROMA_DIR)
     retriever   = get_retriever(vectorstore)
     rag_chain   = build_chain(retriever)
-    print("RAG pipeline ready.")
+    # print("RAG pipeline ready.")
+    # yield
+    asyncio.create_task(keep_alive())
     yield
-    print("Shutting down.")
 
 
 # ─── FastAPI app ──────────────────────────────────────────────────────────────
