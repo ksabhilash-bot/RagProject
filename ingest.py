@@ -4,7 +4,7 @@ from embedding import create_vectorstore
 import shutil
 import os
 
-file_path = "AKS.pdf"
+file_path = "AKS.txt"
 chroma_dir = "chroma_db"
 
 # delete old vectorstore if exists

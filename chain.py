@@ -46,5 +46,26 @@ def build_chain(retriever):
 
 
 def ask(chain, question: str) -> str:
+    text = question.strip().lower()
+
+    small_talk = {
+        "ok": "You're welcome! Feel free to ask anything about Abhilash, his projects, skills, or services.",
+        "okk": "You're welcome! Feel free to ask anything about Abhilash, his projects, skills, or services.",
+        "okkk": "You're welcome! Feel free to ask anything about Abhilash, his projects, skills, or services.",
+        "okay": "Glad I could help! Let me know if you have any questions.",
+        "thanks": "You're welcome! 😊",
+        "thank you": "You're welcome! 😊",
+        "thx": "You're welcome! 😊",
+        "hmm": "Is there anything else you'd like to know about Abhilash?",
+        "great": "Glad to hear that! Feel free to ask more questions.",
+        "nice": "Thank you! Let me know if you'd like to know more.",
+        "cool": "😎 Happy to help!",
+        "bye": "Goodbye! Feel free to come back anytime.",
+        "hello": "Hello! Ask me anything about Abhilash, his projects, skills, or services.",
+        "hi": "Hi! How can I help you today?"
+    }
+
+    if text in small_talk:
+        return small_talk[text]
     response = chain.invoke(question)
     return response
