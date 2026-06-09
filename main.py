@@ -162,7 +162,7 @@ async def health():
         "tracked_users": len(rate_tracker),
     }
 
-
+#only to delete the cache and rate tracker for testing purposes, not exposed in production
 @app.delete("/cache")
 async def flush_cache(request: Request):
     get_user_id(request)        # still requires a valid ragcookie
