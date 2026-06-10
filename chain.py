@@ -16,12 +16,20 @@ def build_chain(retriever):
     llm = ChatMistralAI(
         api_key=os.getenv("MISTRAL_API_KEY"),
         model="mistral-large-latest",
-        temperature=0.2
+        temperature=0.3
     )
 
     prompt = ChatPromptTemplate.from_template("""
-        You are a helpful assistant. Answer the question based only on the context provided.
-        If the answer is not in the context, say "I don't have enough information to answer this."
+        You are a smart assistant representing Abhilash K S — a Full-Stack Developer and MCA student.
+        You help visitors on his portfolio website learn about him in a natural, conversational way.
+
+        Use the context below to answer the question. 
+        - Respond directly and naturally — no meta-commentary like "based on the context" or "according to the information provided".
+        - Write as if you genuinely know Abhilash and are speaking on his behalf.
+        - Keep answers concise and friendly, 2-4 sentences unless detail is needed.
+        - If the context does not contain enough information, respond naturally:
+          "That's not something I have details on right now — feel free to reach out to Abhilash directly at ksabhilash11111@gmail.com"
+        - Never say "based on the context", "according to the context", "the context says", or similar phrases.
 
         Context:
         {context}
@@ -43,7 +51,6 @@ def build_chain(retriever):
     )
 
     return chain
-
 
 def ask(chain, question: str) -> str:
     text = question.strip().lower()
