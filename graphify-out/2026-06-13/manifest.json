@@ -1,0 +1,52 @@
+{
+  ".codex/hooks.json": {
+    "mtime": 1781346423.7994735,
+    "ast_hash": "3f4874e8e06589136e1a89da69e0b69f",
+    "semantic_hash": "3f4874e8e06589136e1a89da69e0b69f"
+  },
+  "chain.py": {
+    "mtime": 1781017495.0595706,
+    "ast_hash": "76d7a728c09eb95325a34fa97bef9c3d",
+    "semantic_hash": "76d7a728c09eb95325a34fa97bef9c3d"
+  },
+  "config.py": {
+    "mtime": 1780993694.5900772,
+    "ast_hash": "4b84382864665ddb8672b9a748be85b6",
+    "semantic_hash": "4b84382864665ddb8672b9a748be85b6"
+  },
+  "debug.py": {
+    "mtime": 1780901421.706643,
+    "ast_hash": "bcbd5edb681305f71215edc6e8d89dd6",
+    "semantic_hash": "bcbd5edb681305f71215edc6e8d89dd6"
+  },
+  "document_loader.py": {
+    "mtime": 1780816118.645842,
+    "ast_hash": "9fef9407f6b98d2a1df2ab32317cb7ae",
+    "semantic_hash": "9fef9407f6b98d2a1df2ab32317cb7ae"
+  },
+  "embedding.py": {
+    "mtime": 1780901728.068993,
+    "ast_hash": "7197eef81d5a4d15570b948e6f0d47ec",
+    "semantic_hash": "7197eef81d5a4d15570b948e6f0d47ec"
+  },
+  "ingest.py": {
+    "mtime": 1780984419.7638936,
+    "ast_hash": "f234c45ce3a69b32e55f2f266306aa9b",
+    "semantic_hash": "f234c45ce3a69b32e55f2f266306aa9b"
+  },
+  "main.py": {
+    "mtime": 1780992601.7021182,
+    "ast_hash": "c6525fc56819eefe5d7cd0f2ed3f5575",
+    "semantic_hash": "c6525fc56819eefe5d7cd0f2ed3f5575"
+  },
+  "retriever.py": {
+    "mtime": 1780903160.5820057,
+    "ast_hash": "662a317f5a232132d3391d06e8eac6de",
+    "semantic_hash": "662a317f5a232132d3391d06e8eac6de"
+  },
+  "splitter.py": {
+    "mtime": 1780834040.328375,
+    "ast_hash": "8777e62ed50ed2f5fd6325aa3fc61b43",
+    "semantic_hash": "8777e62ed50ed2f5fd6325aa3fc61b43"
+  }
+}

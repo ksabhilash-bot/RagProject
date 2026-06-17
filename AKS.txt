@@ -12,7 +12,6 @@ Name: Abhilash K S
 
 Email: [ksabhilash11111@gmail.com](mailto:ksabhilash11111@gmail.com)
 
-Phone: +91 9991066996
 
 GitHub: https://github.com/ksabhilash-bot
 
@@ -157,7 +156,7 @@ Q: What type of projects has Abhilash built?
 A: College management systems, AI-powered RAG applications, portfolio assistants, chat applications, and full-stack web applications.
 
 Q: How can I contact Abhilash?
-A: Through email at [ksabhilash11111@gmail.com](mailto:ksabhilash11111@gmail.com) or by phone at +91 9991066996.
+A: Through email at [ksabhilash11111@gmail.com](mailto:ksabhilash11111@gmail.com).
 
 Availability
 

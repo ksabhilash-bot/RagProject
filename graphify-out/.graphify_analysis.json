@@ -1,0 +1,187 @@
+{
+  "communities": {
+    "0": [
+      "chain",
+      "chain_ask",
+      "chain_build_chain",
+      "chain_format_docs",
+      "fastapi",
+      "main",
+      "main_health",
+      "main_keep_alive",
+      "main_lifespan",
+      "retriever",
+      "retriever_get_retriever",
+      "retriever_py_chroma"
+    ],
+    "1": [
+      "basemodel",
+      "main_check_rate_limit",
+      "main_flush_cache",
+      "main_get_user_id",
+      "main_make_cache_key",
+      "main_query",
+      "main_queryrequest",
+      "main_rationale_101",
+      "main_rationale_122",
+      "main_rationale_93",
+      "request"
+    ],
+    "2": [
+      "debug",
+      "embedding",
+      "embedding_create_vectorstore",
+      "embedding_get_embeddings",
+      "embedding_py_chroma",
+      "embedding_py_document",
+      "embedding_vectorload",
+      "retriever_py_document",
+      "retriever_retrieve_docs"
+    ],
+    "3": [
+      "agents_graphify",
+      "aks_abhilash_k_s",
+      "aks_campusdesk",
+      "aks_rag_portfolio_assistant",
+      "readme_chromadb",
+      "readme_fastapi",
+      "readme_langchain",
+      "readme_ragproject"
+    ],
+    "4": [
+      "document_loader",
+      "document_loader_document_loader",
+      "ingest",
+      "splitter",
+      "splitter_py_document",
+      "splitter_split_documents"
+    ],
+    "5": [
+      "basesettings",
+      "config",
+      "config_config",
+      "config_settings"
+    ]
+  },
+  "cohesion": {
+    "0": 0.2727272727272727,
+    "1": 0.21818181818181817,
+    "2": 0.3333333333333333,
+    "3": 0.25,
+    "4": 0.4666666666666667,
+    "5": 0.5
+  },
+  "gods": [
+    {
+      "id": "main_query",
+      "label": "query()",
+      "degree": 7
+    },
+    {
+      "id": "embedding_vectorload",
+      "label": "vectorload()",
+      "degree": 6
+    },
+    {
+      "id": "main_lifespan",
+      "label": "lifespan()",
+      "degree": 6
+    },
+    {
+      "id": "embedding_create_vectorstore",
+      "label": "create_vectorstore()",
+      "degree": 5
+    },
+    {
+      "id": "main_get_user_id",
+      "label": "get_user_id()",
+      "degree": 5
+    },
+    {
+      "id": "retriever_get_retriever",
+      "label": "get_retriever()",
+      "degree": 5
+    },
+    {
+      "id": "readme_ragproject",
+      "label": "RagProject",
+      "degree": 5
+    },
+    {
+      "id": "chain_build_chain",
+      "label": "build_chain()",
+      "degree": 3
+    },
+    {
+      "id": "chain_ask",
+      "label": "ask()",
+      "degree": 3
+    },
+    {
+      "id": "embedding_get_embeddings",
+      "label": "get_embeddings()",
+      "degree": 3
+    }
+  ],
+  "surprises": [
+    {
+      "source": "RagProject",
+      "target": "RAG-Based Portfolio Assistant",
+      "source_files": [
+        "README.md",
+        "AKS.txt"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; semantically similar concepts with no structural link; peripheral node `RAG-Based Portfolio Assistant` unexpectedly reaches hub `RagProject`"
+    },
+    {
+      "source": "graphify",
+      "target": "RagProject",
+      "source_files": [
+        "AGENTS.md",
+        "README.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; peripheral node `graphify` unexpectedly reaches hub `RagProject`"
+    },
+    {
+      "source": "query()",
+      "target": "ask()",
+      "source_files": [
+        "main.py",
+        "chain.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "lifespan()",
+      "target": "vectorload()",
+      "source_files": [
+        "main.py",
+        "embedding.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "lifespan()",
+      "target": "build_chain()",
+      "source_files": [
+        "main.py",
+        "chain.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories"
+    }
+  ],
+  "tokens": {
+    "input": 25110,
+    "output": 1419
+  }
+}
